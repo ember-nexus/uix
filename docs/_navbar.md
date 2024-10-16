@@ -1,0 +1,3 @@
+- [GitHub](https://github.com/ember-nexus/uix)
+- [TypeDoc](https://ember-nexus.github.io/uix/type/)
+- [NPM](https://www.npmjs.com/package/@ember-nexus/uix)

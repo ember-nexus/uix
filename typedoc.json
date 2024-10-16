@@ -1,0 +1,16 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "expand",
+  "entryPoints": ["./src"],
+  "out": "./docs/type",
+  "plugin": [
+    "typedoc-theme-hierarchy",
+    "typedoc-plugin-mdn-links"
+  ],
+  "theme": "hierarchy",
+  "navigationLinks": {
+    "UIX Documentation": "https://ember-nexus.github.io/uix",
+    "NPM": "https://www.npmjs.com/package/@ember-nexus/uix",
+    "GitHub": "https://github.com/ember-nexus/uix"
+  }
+}
