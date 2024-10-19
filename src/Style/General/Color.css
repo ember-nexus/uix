@@ -1,0 +1,9 @@
+@layer base {
+    :root {
+        --color-content-background: #fff;
+        --color-border: #000;
+        --color-shadow: 220 3% 15%;
+    }
+}
+
+

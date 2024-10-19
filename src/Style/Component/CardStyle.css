@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    container-type: size;
+    width: 100%;
+    min-width: 10rem;
+}
+
+.card {
+    position: relative;
+
+    padding: 1rem;
+
+    background: var(--card-background);
+    border-color: var(--card-border-color);
+    border-style: var(--card-border-style);
+    border-width: var(--card-border-width);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+@container (width < 20rem) {
+    .card {
+        padding: 0.5rem;
+    }
+}

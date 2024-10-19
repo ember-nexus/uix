@@ -1,0 +1,13 @@
+@layer base {
+    :root {
+        --border-radius-none: 0;
+        --border-radius-thin: 3px;
+        --border-radius: 10px;
+        --border-radius-thick: 20px;
+
+        --border-width-none: 0;
+        --border-width: 1px;
+    }
+}
+
+

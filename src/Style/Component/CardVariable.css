@@ -1,0 +1,14 @@
+@import url("../General/Color.css");
+@import url("../General/Border.css");
+@import url("../General/Shadow.css");
+
+@layer base {
+    :root {
+        --card-background: var(--color-content-background);
+        --card-border-radius: var(--border-radius);
+        --card-border-width: var(--border-width-none);
+        --card-border-color: var(--color-border);
+        --card-border-style: solid;
+        --card-shadow: var(--shadow-2);
+    }
+}
