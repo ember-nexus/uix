@@ -1,5 +1,9 @@
 const path = require('path');
 const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const lightningcss = require('lightningcss');
+const browserslist = require('browserslist');
 
 module.exports = {
   entry: './src/index.ts',
@@ -17,6 +21,11 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [ MiniCssExtractPlugin.loader, 'css-loader' ]
+        // use: [ 'css-loader' ]
       },
     ],
   },
@@ -54,6 +63,17 @@ module.exports = {
         },
         extractComments: false,
       }),
+      new CssMinimizerPlugin({
+        minify: CssMinimizerPlugin.lightningCssMinify,
+        minimizerOptions: {
+          targets: lightningcss.browserslistToTargets(browserslist(require('./package.json').browserslist))
+        },
+      }),
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "index.css"
+    })
+  ]
 };
