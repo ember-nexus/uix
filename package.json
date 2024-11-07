@@ -50,7 +50,9 @@
     "last 1 years and not dead"
   ],
   "dependencies": {
-    "open-props": "^1.7.7"
+    "@ember-nexus/web-sdk": "^0.1.1",
+    "open-props": "^1.7.7",
+    "xstate": "^5.18.2"
   },
   "devDependencies": {
     "@eslint/compat": "^1.1.0",
@@ -83,7 +85,7 @@
     "jest": "^29.7.0",
     "lightningcss": "^1.27.0",
     "mini-css-extract-plugin": "^2.9.1",
-    "msw": "^2.0.2",
+    "msw": "^2.4.11",
     "prettier": "^3.3.3",
     "sinon": "^18.0",
     "style-loader": "^4.0.0",

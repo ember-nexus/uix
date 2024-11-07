@@ -1,2 +1,1 @@
-const Machine = 'placeholder';
-export { Machine };
+export * from './SingleElementMachine.js';
