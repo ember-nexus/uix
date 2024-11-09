@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  fix-package-json-exports:
+    cmds:
+      - |
+        cd src
+        styleExports=$(find ./Style -name '*.css' | jq --slurp --raw-input 'split("\n")[:-1] | map({(.): {import: {default: ("./dist/esm/" + (. | ltrimstr("./")))}}}) | add')
+        folderExports=$(find . -type f -name 'index.ts' | sed -r 's|/[^/]+$||' | sort | uniq | jq --slurp --raw-input 'split("\n")[:-1] | map({(.): {import: {types: ("./dist/esm/" + (. | ltrimstr("./")) + "/index.d.ts"), default: ("./dist/esm/" + (. | ltrimstr("./")) + "/index.js")}}}) | add')
+        indexExports='{"./package.json": "./package.json", ".": {"import": {"types": "./dist/types/index.d.ts", "default": "./dist/esm/index.js"}}}'
+        exports=$(jq --slurp 'add' <(echo "$indexExports") <(echo "$folderExports") <(echo "$styleExports"))
+        cd ..
+        package=$(cat package.json)
+        newPackage=$(jq -n --argjson package "$package" --argjson exports "$exports" '$package | .exports = $exports')
+        echo "$newPackage" > package.json
+        echo "Fixed package.json exports"
