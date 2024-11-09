@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Added
 - Add single element machine.
+- Add helper script to fix package.json exports, runnable via `task fix-package-json-exports`, closes #4.
 
 ## 0.0.3 - 2024-10-21
 
