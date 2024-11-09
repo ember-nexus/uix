@@ -5,9 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## 0.0.4 - 2024-11-09
 ### Added
 - Add single element machine.
-- Add helper script to fix package.json exports, runnable via `task fix-package-json-exports`, closes #4.
+- Add helper script to fix package.json exports, runnable via `task fix-package-json-exports`, closes [#4].
 
 ## 0.0.3 - 2024-10-21
 
